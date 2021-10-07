@@ -7,10 +7,9 @@ public class StringCount {
     public static int countWords(String text) {
         if(text==null) return 0;
         int count = 0;
-        char ch;
         if((text.charAt(0)!=' ')) count++;
         for (int i = 0; i < text.length(); i++) {
-            if(((i>0)&&(text.charAt(i)!=' ')&&(text.charAt(i-1)==' '))) count++;
+            if((i>0)&&(text.charAt(i)!=' ')&&(text.charAt(i-1)==' ')) count++;
         }
         return count;
     }
@@ -29,7 +28,7 @@ public class StringCount {
 
     public static int countCharIgnoringCase(String text, char c) {
         if(text==null) return 0;
-        int count=0,s;
+        int count=0;
         for(int i=0;i<text.length();i++)
         {
             if( getNumericValue(text.charAt(i))==getNumericValue(c) && getNumericValue(c)>=10) count++;
@@ -42,7 +41,6 @@ public class StringCount {
     }
     public static boolean isPasswordSafe(String password){
         if(password==null) throw new IllegalArgumentException();
-        boolean cond1=false,cond2=false,cond3=false;
         int a=password.length();
         if(password.length()<8) return false;
         if(!check_condition(password,65,90)) return false;

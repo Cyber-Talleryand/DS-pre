@@ -2,7 +2,7 @@ package e2;
 
 public class Slopes {
     public static int downTheSlope(char[][] slopeMap, int right, int down) {
-        int count = 0, a = 0, b = 0, i_a;
+        int count = 0,a,b,i_a;
         boolean check = true;
 
         if (slopeMap.length != slopeMap[0].length) throw new IllegalArgumentException();
@@ -24,15 +24,11 @@ public class Slopes {
         }
         if(slopeMap[0][0] == '#') count++;
         while (check) {
-
             for (i_a = 0; i_a < right; i_a++) {
-
                 b++;
-
                 if (b > slopeMap.length - 1) b = b - slopeMap.length;
                 if (a<slopeMap.length && b<slopeMap.length && slopeMap[a][b] == '#') count++;
             }
-
             for (i_a = 0; i_a < down; i_a++) {
                 a++;
                 if (a<slopeMap.length && b<slopeMap.length && slopeMap[a][b] == '#') count++;
@@ -47,7 +43,7 @@ public class Slopes {
         int count=0,a,b;
         boolean check=true;
         try {
-            if (slopeMap[slopeMap.length-1][slopeMap.length-1]=='$');
+            if (slopeMap[slopeMap.length-1][slopeMap.length-1]=='.') slopeMap[slopeMap.length-1][slopeMap.length-1]='.';
             for (a=0;a<slopeMap.length;a++){
                 for(b=0;b<slopeMap.length;b++){
                     if (slopeMap[a][b]!='.'&&slopeMap[a][b]!='#') throw new IllegalArgumentException();
