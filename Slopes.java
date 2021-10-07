@@ -44,9 +44,8 @@ public class Slopes {
         return count;
     }
     public static int jumpTheSlope(char[][] slopeMap, int right, int down){
-        int count=0,a=0,b=0,i_a;
+        int count=0,a,b;
         boolean check=true;
-        if (slopeMap.length != slopeMap[0].length) throw new IllegalArgumentException();
         try {
             if (slopeMap[slopeMap.length-1][slopeMap.length-1]=='$');
             for (a=0;a<slopeMap.length;a++){
